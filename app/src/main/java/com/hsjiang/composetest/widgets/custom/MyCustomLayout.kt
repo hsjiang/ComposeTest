@@ -77,11 +77,4 @@ fun MyBox() {
 
         }
     }
-//    Row {
-//        Icon(modifier = Modifier
-//            .size(10.dp)
-//            .alignBy { it.measuredHeight },
-//            painter = ColorPainter(Color.Cyan),
-//            contentDescription = "")
-//    }
 }
