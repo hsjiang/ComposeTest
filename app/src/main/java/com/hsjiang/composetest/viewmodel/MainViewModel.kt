@@ -30,9 +30,15 @@ class MainViewModel @Inject constructor(
         }
     }.flowOn(Dispatchers.IO).shareIn(viewModelScope, WhileSubscribed(5000))
 
-//    val stateInFlow:StateFlow<Int> = flow<Int> {
-//
-//    }.stateIn(viewModelScope)
+    val stateInFlow: StateFlow<Int> = MutableStateFlow(0)
+
+    fun loadState() {
+        viewModelScope.launch {
+            flow<Int> {
+
+            }.stateIn(viewModelScope)
+        }
+    }
 
 
     fun loadList() {

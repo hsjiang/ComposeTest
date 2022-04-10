@@ -1,4 +1,4 @@
-package com.hsjiang.composetest.ui.view.article
+package com.hsjiang.composetest.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,6 +7,7 @@ import com.hsjiang.composetest.domain.article.HotArticleListUseCase
 import com.hsjiang.library.result.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -19,7 +20,8 @@ class ArticleViewModel @Inject constructor(
 
     private val _uiState = MutableStateFlow<Result<List<Article>?>>(Result.Loading)
 
-    val uiState = _uiState
+    val uiState: StateFlow<Result<List<Article>?>>
+        get() = _uiState
 
     fun loadArticles() {
         viewModelScope.launch {

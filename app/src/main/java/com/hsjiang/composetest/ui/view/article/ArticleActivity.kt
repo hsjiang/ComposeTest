@@ -16,6 +16,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.hsjiang.composetest.ui.theme.ComposeTestTheme
+import com.hsjiang.composetest.viewmodel.ArticleViewModel
 import com.hsjiang.library.result.data
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
