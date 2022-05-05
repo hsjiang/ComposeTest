@@ -1,4 +1,4 @@
-package com.hsjiang.library.di
+package com.hsjiang.composetest.di
 
 import android.annotation.SuppressLint
 import android.app.Application

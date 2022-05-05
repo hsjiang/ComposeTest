@@ -5,3 +5,5 @@ data class WorkResponse<T>(
     var data: T?,
     val msg: String?
 )
+
+fun <T> WorkResponse<T>.isSuccess() = this.code == 200
