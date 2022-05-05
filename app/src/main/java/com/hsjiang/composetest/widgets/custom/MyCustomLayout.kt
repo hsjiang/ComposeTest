@@ -46,9 +46,8 @@ fun MyCustomColumn(
 ) {
     Layout(content = content, modifier = modifier) { measureables, constraints ->
         val placeables = measureables.map { it.measure(constraints = constraints) }
-        val with = placeables.sumOf { it.width }
         val height = placeables.sumOf { it.height }
-        layout(width = with, height = height) {
+        layout(width = constraints.maxWidth, height = height) {
             var y = 0
             placeables.forEach { placeable ->
                 placeable.placeRelative(
