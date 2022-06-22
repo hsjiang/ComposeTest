@@ -2,7 +2,6 @@ package com.hsjiang.composetest.widgets.effects
 
 import androidx.compose.runtime.*
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
@@ -29,5 +28,16 @@ private fun <T> StateFlow<T>.collectAsSate1(
         }
     })
     return result
+}
+
+@Composable
+private fun produceStateTest(data: String): State<String> {
+
+    return produceState(initialValue = data, producer = {
+        value = data.trim()
+        awaitDispose {
+
+        }
+    })
 }
 
