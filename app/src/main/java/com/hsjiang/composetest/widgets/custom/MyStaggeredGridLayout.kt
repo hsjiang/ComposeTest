@@ -94,7 +94,7 @@ fun LayoutsCodelabPreview() {
 }
 
 @Composable
-fun BodyContent(modifier: Modifier = Modifier) {
+private fun BodyContent(modifier: Modifier = Modifier) {
     Row(modifier = Modifier.horizontalScroll(state = rememberScrollState())) {
         StaggeredGrid(modifier = modifier, rows = 8) {
             for (topic in topics) {
